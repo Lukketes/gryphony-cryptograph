@@ -2,24 +2,15 @@ import os
 import getpass
 import base64
 from typing import Set, Optional, List
-
 from cryptography.fernet import Fernet, InvalidToken
 from cryptography.hazmat.primitives import hashes
-
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
-# --- Configurações ---
-# A pasta alvo deve ser um caminho relativo ou absoluto.
-# Para portabilidade, evite caminhos hardcoded específicos de SO (como 'D:\...').
-# Usaremos um caminho relativo para o diretório atual como um bom padrão.
 TARGET_DIR: str = "files_to_encrypt"
-ALLOWED_EXTENSIONS: Set[str] = {'.jpg', '.jpeg', '.png', '.pdf', '.txt', '.docx', '.xlsx'}
+ALLOWED_EXTENSIONS: Set[str] = {'.jpg', '.jpeg', '.png', '.pdf', '.txt', '.docx', '.xlsx', '.ZIP', '.zip'}
 KEY_FILE: str = ".encryption_key.bin"
 SALT_FILE: str = ".salt.bin"
 ENCRYPTED_SUFFIX: str = ".encrypted"
-
-
-
 
 
 def derive_key_from_password(password: str, salt: bytes) -> bytes:
