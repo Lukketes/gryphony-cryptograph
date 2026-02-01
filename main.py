@@ -7,7 +7,7 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 TARGET_DIR: str = "files_to_encrypt"
-ALLOWED_EXTENSIONS: Set[str] = {'.jpg', '.jpeg', '.png', '.pdf', '.txt', '.docx', '.xlsx', '.ZIP', '.zip'}
+ALLOWED_EXTENSIONS: Set[str] = {'.docx', '.doc', '.pdf', '.txt', '.rtf', '.odt', '.xlsx', '.xls', '.csv', '.pptx', '.ppt', '.jpg', '.jpeg', '.png', '.gif', '.svg', '.bmp', '.mp4', '.avi', '.mov', '.mkv', '.mp3', '.wav', '.zip', '.rar', '.exe', '.iso', '.img', '.html', '.htm', '.css', '.php', '.js', '.mdb', '.accdb', '.dbf', '.sql'}
 KEY_FILE: str = ".encryption_key.bin"
 SALT_FILE: str = ".salt.bin"
 ENCRYPTED_SUFFIX: str = ".encrypted"
